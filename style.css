@@ -1,0 +1,391 @@
+/* ==========================================
+   電子スターフ CSS
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#000;
+    color:#FFF;
+    font-family:
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+}
+
+/* ==========================
+   起動画面
+========================== */
+
+#startup{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:25px;
+
+    background:#000;
+}
+
+#startup h1{
+
+    font-size:48px;
+    letter-spacing:4px;
+
+}
+
+.input-group{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+
+    width:320px;
+
+}
+
+.input-group label{
+
+    font-size:22px;
+
+}
+
+.input-group input{
+
+    font-size:28px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+}
+
+#startButton{
+
+    width:320px;
+
+    font-size:30px;
+
+    padding:15px;
+
+    background:#2196F3;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+#startButton:active{
+
+    transform:scale(0.98);
+
+}
+
+/* ==========================
+   メイン画面
+========================== */
+
+#mainScreen{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+}
+
+/* ==========================
+   左画面
+========================== */
+
+#leftPanel{
+
+    width:25%;
+
+    background:#111;
+
+    border-right:4px solid white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    padding:20px;
+
+    gap:20px;
+
+}
+
+.section{
+
+    border:0.1px solid white;
+
+    background-image: linear-gradient(#060f5a, #060113);
+
+    padding:15px;
+
+}
+
+.title{
+
+    font-size:14px;
+
+    color:#BBBBBB;
+
+    margin-bottom:10px;
+
+}
+
+#currentDate{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+#currentTime{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+#diagramName{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+#routeName{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+#gpsAccuracy{
+
+    font-size:23px;
+
+}
+
+/* ==========================
+   右画面
+========================== */
+
+#rightPanel{
+
+    width:75%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-evenly;
+
+    padding:20px;
+
+}
+
+/* 停留所ブロック */
+
+.stopBlock{
+
+    border:2px solid white;
+
+    background-image: linear-gradient(#060f5a, #060113);
+
+    height:28%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding-left:40px;
+
+    padding-right:40px;
+
+}
+
+.stopName{
+
+    font-size:48px;
+
+    font-weight:bold;
+
+}
+
+.stopTime{
+
+    font-size:54px;
+
+    font-weight:bold;
+
+}
+
+#stop2Name, #stop2Time, #stop3Name, #stop3Time{
+    opacity:0.7;
+    font-size: 38px;
+}
+
+/* ==========================
+   ポップアップ
+========================== */
+
+#popup{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:rgba(255,230,0,0.95);
+
+    color:black;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    border:4px solid black;
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    z-index:1000;
+
+}
+
+/* ==========================
+   GPS取得中
+========================== */
+
+#loading{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:black;
+
+    color:white;
+
+    font-size:42px;
+
+    z-index:2000;
+
+}
+
+/* ==========================
+   エラー
+========================== */
+
+#errorBox{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#D50000;
+
+    color:white;
+
+    padding:15px 40px;
+
+    border-radius:10px;
+
+    font-size:26px;
+
+    z-index:1500;
+
+}
+
+/* ==========================
+   非表示
+========================== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+/* ==========================
+   横画面専用
+========================== */
+
+@media (orientation:portrait){
+
+    body{
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        font-size:36px;
+
+    }
+
+    body::before{
+
+        content:"端末を横向きにしてください";
+
+        color:white;
+
+    }
+
+    #startup,
+    #mainScreen{
+
+        display:none !important;
+
+    }
+
+}
