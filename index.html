@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>電子スターフ</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ダイヤ入力画面 -->
+<div id="startup">
+
+    <h1>電子スターフ</h1>
+
+    <div class="input-group">
+        <label>ダイヤ名</label>
+        <input
+            type="text"
+            id="diagramInput"
+            placeholder="例：平日" value="平001">
+    </div>
+
+    <button id="startButton">
+        運行開始
+    </button>
+
+</div>
+
+
+
+<!-- メイン画面 -->
+<div id="mainScreen" class="hidden">
+
+    <!-- 左画面 -->
+    <div id="leftPanel">
+
+        <div class="section">
+
+            <span class="title">
+                ダイヤ
+            </span>
+
+            <span id="diagramName">
+                ---
+            </span>
+
+        </div>
+
+        <div class="section">
+
+            <span class="title">
+                系統
+            </span>
+
+            <span id="routeName">
+                ---
+            </span>
+
+        </div>
+
+        <div class="section">
+
+            <div id="currentDate">
+                ----/--/--
+            </div>
+
+            <div id="currentTime">
+                --:--:--
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <div class="title">
+                GPS精度
+            </div>
+
+            <div id="gpsAccuracy">
+                ---
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 右画面 -->
+    <div id="rightPanel">
+
+        <div class="stopBlock">
+
+            <div class="stopName"
+                 id="stop1Name">
+                停留所名
+            </div>
+
+            <div class="stopTime"
+                 id="stop1Time">
+                --:--
+            </div>
+
+        </div>
+
+
+
+        <div class="stopBlock">
+
+            <div class="stopName"
+                 id="stop2Name">
+                停留所名
+            </div>
+
+            <div class="stopTime"
+                 id="stop2Time">
+                --:--
+            </div>
+
+        </div>
+
+
+
+        <div class="stopBlock">
+
+            <div class="stopName"
+                 id="stop3Name">
+                停留所名
+            </div>
+
+            <div class="stopTime"
+                 id="stop3Time">
+                --:--
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ポップアップ -->
+<div id="popup" class="hidden">
+
+    <div id="popupMessage">
+        この先右折します
+    </div>
+
+</div>
+
+
+
+<!-- ローディング -->
+<div id="loading" class="hidden">
+
+    GPS取得中...
+
+</div>
+
+
+
+<!-- エラーメッセージ -->
+<div id="errorBox" class="hidden">
+
+    エラー
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
