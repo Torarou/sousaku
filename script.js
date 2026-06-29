@@ -328,7 +328,8 @@ function onGPS(position){
 
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
-    console.log(lat+","+lng);
+    console.log(lat);
+    console.log(lng);
 
     if(!initialized){
 
