@@ -558,12 +558,12 @@ function findNearestStop(lat, lng){
             stop.lng
         );
 
-        /*if(d < minDistance){*/
+        if(d < minDistance){
 
             minDistance = d;
             nearestIndex = index;
 
-        /*}*/
+        }
 
     });
 
