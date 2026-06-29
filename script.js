@@ -322,16 +322,20 @@ function startGPS(){
 // GPS受信
 //==================================
 
+let initialized = false;
+
 function onGPS(position){
 
     const lat = position.coords.latitude;
-
     const lng = position.coords.longitude;
 
-    const accuracy = position.coords.accuracy;
+    if(!initialized){
 
-    gpsAccuracy.textContent =
-        Math.round(accuracy) + " m";
+        findNearestStop(lat,lng);
+
+        initialized = true;
+
+    }
 
     judgeStop(lat,lng);
 
@@ -532,6 +536,35 @@ function finishRun(){
     document.getElementById("stop3Time").textContent="";
 
     showPopup("運行終了");
+
+}
+
+function findNearestStop(lat, lng){
+
+    let minDistance = Infinity;
+    let nearestIndex = 0;
+
+    stopList.forEach((stop, index)=>{
+
+        const d = distance(
+            lat,
+            lng,
+            stop.lat,
+            stop.lng
+        );
+
+        if(d < minDistance){
+
+            minDistance = d;
+            nearestIndex = index;
+
+        }
+
+    });
+
+    currentIndex = nearestIndex;
+
+    updateStopDisplay();
 
 }
 
