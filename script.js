@@ -559,9 +559,10 @@ function findNearestStop(lat, lng){
         );
 
         if(d < minDistance){
-
+            
             minDistance = d;
             nearestIndex = index;
+            console.log(minDistance);
 
         }
 
