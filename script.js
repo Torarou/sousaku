@@ -329,6 +329,10 @@ function onGPS(position){
 
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
+    const accuracy = position.coords.accuracy;
+
+    gpsAccuracy.textContent =
+        Math.round(accuracy) + " m";
 
     if(!initialized){
 
