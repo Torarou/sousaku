@@ -325,11 +325,10 @@ function startGPS(){
 let initialized = false;
 
 function onGPS(position){
+    console.log("GPS計測");
 
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
-    console.log(lat);
-    console.log(lng);
 
     if(!initialized){
 
@@ -555,12 +554,12 @@ function findNearestStop(lat, lng){
             stop.lng
         );
 
-        if(d < minDistance){
+        /*if(d < minDistance){*/
 
             minDistance = d;
             nearestIndex = index;
 
-        }
+        /*}*/
 
     });
 
