@@ -244,7 +244,7 @@ function updateStopDisplay(){
     for(let i=0;i<3;i++){
 
         const stop = stopList[currentIndex+i];
-
+        console.log(currentIndex);
         const name =
             document.getElementById(`stop${i+1}Name`);
 
@@ -562,7 +562,6 @@ function findNearestStop(lat, lng){
             
             minDistance = d;
             nearestIndex = index;
-            console.log(minDistance);
 
         }
 
