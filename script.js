@@ -390,7 +390,7 @@ function judgeStop(lat,lng){
 
     // 20m以内で通過
 
-    if(d<=20){
+    if(d<=30){
 
         currentIndex++;
 
