@@ -318,6 +318,7 @@ function startGPS(){
 
 
 
+
 //==================================
 // GPS受信
 //==================================
@@ -368,43 +369,30 @@ function onGPSError(error){
 // 停留所判定
 //==================================
 
+let previousDistance = Infinity;
+
 function judgeStop(lat,lng){
 
-    if(currentIndex>=stopList.length){
+    if(currentIndex>=stopList.length) return;
 
-        return;
+    const stop=stopList[currentIndex];
 
-    }
-
-    const stop = stopList[currentIndex];
-
-    const d = distance(
-
+    const d=distance(
         lat,
         lng,
-
         stop.lat,
         stop.lng
-
     );
-
-    // 20m以内で通過
-
-    if(d<=30){
+    console.log(d);
+    if(previousDistance<=20 && d>20){
 
         currentIndex++;
 
         updateStopDisplay();
 
-        // 終点
-
-        if(currentIndex>=stopList.length){
-
-            finishRun();
-
-        }
-
     }
+
+    previousDistance=d;
 
 }
 
